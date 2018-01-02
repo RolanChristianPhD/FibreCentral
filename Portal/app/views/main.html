@@ -1,0 +1,130 @@
+<div class="page-header" style="margin-top: 0px">
+	<h1><center>"We get fibre built to you"</center></h1>
+</div>
+
+<div class="row">  
+	<div class="col-sm-8">
+		<ul class="list-group">
+			<li class="list-group-item" style="border: none">
+				<p class="text-justify">The demand for fast, reliable fibre access has skyrocketed. There are many companies providing fibre, but they will only build to your home when enough demand is created in your area. </p>
+			</li>
+			<li class="list-group-item" style="border: none">
+				<h4 class="list-group-item-heading">The Problem</h4>
+				<p class="text-justify">So why does it feel like fibre companies are not listening to you? Why are they not building fibre to you? Are you not important enough? Are you not living in an area “deserving” enough? The answer is that each fibre company builds based on demand. They have a web site (or mutliple partner web sites) where you can register your interest. When there is enough interest, your area "qualifies" and the process starts.  However, because there are so many different companies that your neighbourhood can log interest with,  there is no single view from any of these companies of the TRUE demand.  So even if your area truly qualifies, the numbers are so spread across multiple websites, databases and companies that no single fibre build company will know.</p>
+			</li>
+			<li class="list-group-item" style="border: none">
+				<h4 class="list-group-item-heading">The Solution: FibreCentral.co.za</h4>
+				<p class="text-justify">The solution is very simple – there needs to be a central place where everybody logs their interest for fibre. The fibre build companies then need to have access to this data and they need to use it to understand just how many people want fibre and where! This is where we come into the picture. At FibreCentral.co.za we have created a central, unbiased, unaffiliated place for you to register you interest in getting connected.  As you, your neighbours, friends and families register interest we will manage on your behalf the fibre companies to show them where to build.</p>
+
+				<p>We also plan to offer you more - we want to help you pick a service provider (ISP) and a home device (CPE) to connect to the web.  We will do this by enabling you to compare packages, prices, service and quality for all of these.  In short, we want to be THE central place that you can come to for fibre broadband connectivity!</p>
+			</li>
+
+			<li class="list-group-item" style="border: none">
+				<h4 class="list-group-item-heading">Important info</h4>
+				<p class="text-justify">We are <strong>NOT AFFILIATED</strong> to any of the fibre companies. We  will speak to ANY company that want to take your collective interest for fibre, but we are <strong>NEUTRAL</strong> and will always be neutral as we have your best interest at heart. We are also not a fibre network build company, service provider or CPE provider company.</p>  
+
+				<p>Remember to tell your friends, family, colleagues and neighbours to visit our site and show their interest in getting fibre. The faster we get the interest, the faster we can get the message to the people who build and the faster you will get connected!</p>
+
+				<p>Note: The service we provide is free to you.</p>
+				<br>
+
+				<p><center><img src="images/FibreCentral.jpg" width="35%"/></center></p>
+			</li>
+		</ul>
+  	</div>
+
+  	<div class="col-sm-4">
+  		<div class="panel-group">
+		  	<form name="addressForm" class="form-horizontal">	
+		  		<div class="panel panel-default" style="border-radius: 10px">
+			  		<div class="panel-heading">Step 1: Submit your address OR use our free "Find Me" service</div>		  		
+		  			<div class="panel-body">	
+		  				<div class="input-group" style="width:100%">	  				
+							<input class="form-control input-sm" type="text" name="address" placeholder="Johannesburg, South Africa" ng-model="address">
+
+							<div class="input-group-btn">
+								<button class="btn btn-default btn-sm" ng-click="submitAddress()">Submit</button> 
+								<a class="btn btn-sm disabled" style="color: black">OR</a>
+								<button class="btn btn-default btn-sm" ng-click="getBrowserLocation()">Find me*</button>									  		
+							</div>
+						</div>						
+						<div>
+							<h5><small>*May require changes to your privacy or location settings</small></h5>
+						</div>
+
+					
+						<div title="Click on map to refine your location">
+							<ng-map default-style="true" zoom="15" center="{{coordinates}}" style="width:100%; height:100%" on-click="clickMap($event)">
+								<marker id="location" position="{{coordinates}}"></marker> 
+						    </ng-map>
+						    <br>
+						</div>			  				
+					</div>
+				</div>
+			</form>
+
+			<form name="registerForm" class="form-horizontal">
+				<div class="panel panel-default" style="border-radius: 10px">
+					<div class="panel-heading">Step 2: Enter your details</div>
+					<div class="panel-body">
+						<div class="input-group" style="width:100%">
+							<span class="input-group-addon">
+								<i class="glyphicon glyphicon-user"></i>
+							</span>
+    						<input class="form-control" type="text" name="userFirstName" ng-model="user.firstName" placeholder="First name" required>    						
+						</div>
+
+						<div class="input-group" style="width:100%">
+							<span class="input-group-addon">
+								<i class="glyphicon glyphicon-user"></i>
+							</span>
+							<input class="form-control" type="text" name="userLasName" ng-model="user.lastName" placeholder="Last name" required>
+						</div>
+
+						<div class="input-group" style="width:100%">
+							<span class="input-group-addon">
+								<i class="glyphicon glyphicon-envelope"></i>
+							</span>
+    						<input class="form-control" type="email" name="userEmail" ng-model="user.email" placeholder="Email" required>    						
+						</div>
+
+						<div class="input-group" style="width:100%">
+							<span class="input-group-addon">
+								<i class="glyphicon glyphicon-phone"></i>
+							</span>
+    						<input class="form-control" type="text" name="userPhone" ng-model="user.cellphone" placeholder="Cellphone" required>    						
+						</div>
+					</div>
+					<div class="panel-footer">	  		
+						<input type="submit" class="btn btn-default btn-block" value="Register" ng-click="submit()">									
+						<center><small><a href="" data-toggle="modal" data-target="#statusCheckModal">Already registered? Check build status</a></small></center>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="statusCheckModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+	<div class="modal-dialog modal-sm modal-vertical-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title" id="myModalLabel">Check Fibre Build Status</h4>
+			</div>
+			<div class="modal-body">
+				<label>Email</label>
+				<input class="form-control" type="email" name="userEmail" ng-model="userEmail">
+			</div>
+
+			<div class="alert alert-{{showAlert.type}} fade in" role="alert" ng-show="showAlert.show">
+  				<strong>{{statusResult}}</strong>
+			</div>
+
+			<div class="modal-footer">
+				<input type="button" class="btn btn-default" data-dismiss="modal" value="Close">
+				<input type="submit" class="btn btn-primary" value="Submit" ng-click="checkStatus()">
+			</div>
+		</div>
+	</div>
+</div>
+
